@@ -1,27 +1,18 @@
-import React, {Component} from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { View } from 'react-native';
 import { Provider } from 'react-redux';
 
 import Store from './src/Store';
-import { Header } from './src/components';
+import { Header, CryptoContainer } from './src/components';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
-const { container } = styles;
-
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
-      <Provider>
-        <View style={styles.container}>
+      <Provider store={Store}>
+        <View>
           <Header />
+          <CryptoContainer />
         </View>
       </Provider>
     );
